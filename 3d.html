@@ -1,0 +1,26 @@
+<style>
+#view3d {
+    width: 800px;
+    height: 800px;
+    text-align: center;
+    background: black;
+}
+body {
+    perspective: 1000px;
+}
+</style>
+<div id="view3d">
+
+</div>
+
+<script>
+        var elem = document.getElementById("view3d");
+        
+        window.addEventListener("deviceorientation", function(e) {
+          // remember to use vendor-prefixed transform property
+          elem.style.transform =
+            "rotateZ(" + ( e.alpha - 180 ) + "deg) " +
+            "rotateX(" + e.beta + "deg) " +
+            "rotateY(" + ( e.gamma ) + "deg)";
+        });
+        </script>

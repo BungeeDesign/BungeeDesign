@@ -1,0 +1,24 @@
+{
+  "name": "bungeedesign",
+  "version": "1.0.0",
+  "description": "BungeeDesign.com",
+  "main": "index.js",
+  "dependencies": {
+    "now": "^14.0.3",
+    "charming": "^2.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BungeeDesign/BungeeDesign.git"
+  },
+  "author": "James Rogers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BungeeDesign/BungeeDesign/issues"
+  },
+  "homepage": "https://github.com/BungeeDesign/BungeeDesign#readme"
+}
