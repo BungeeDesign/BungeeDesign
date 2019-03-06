@@ -1,6 +1,9 @@
 // Index.js
-// By James Rogers with ❤
+// By James with ❤
 // Copyright Bungee Design Limited 2019
+
+// Node Module Imports
+// import { charming } from "charming";
 
 // Wait for DOM to load then run Init
 window.addEventListener('load', () => {
