@@ -20,14 +20,17 @@ $museo-light: 'museo-sans-display', sans-serif;
 }
 
 body {
+    background: black;
     margin: 0px;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     // overflow: hidden;
+    // Hide cursor for main section
+    cursor: none;
 }
 
 .preloader {
-    transition: cubic-bezier(1, 0.13, 0.39, 0.98) 0.5s;
+    transition: cubic-bezier(1, 0.13, 0.39, 0.98) 0.9s;
     position: fixed;
     text-align: center;
     background: black;
@@ -37,8 +40,8 @@ body {
 }
 
 .preloader img {
-    margin-top: 300px;
-    width: 150px;
+    margin-top: 400px;
+    width: 50px;
     text-align: center;
 }
 
@@ -50,8 +53,54 @@ body {
     display: block;
 }
 
+.loaderWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loaderCircle {
+    opacity: 0;
+    position: absolute;
+    border-style: solid;
+    border-width: 4px 4px 4px 4px;
+    border-radius: 50%;
+    color: white;
+    width: 300px;
+    height: 300px;
+    margin-top: 460px; 
+}
+
 .preloader-loaded {
-    transform: translateY(3000px);
+    opacity: 0;
+    transform: scale(2);
+}
+
+// Interface Cursor 
+.interfaceCursor {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    // background: #fff;
+    border-style: solid;
+    border-width: 2px;
+    color: white;
+    position: fixed;
+    left: -40px;
+    top: -40px;
+    z-index: 999;
+    // opacity: .3;
+}
+
+.innerCircle {
+    width: 10px;
+    height: 10px;
+    position: fixed;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    z-index: 11111;
+    left: -18.5px;
+    top: -18.5px;
 }
 
 .main {
@@ -59,10 +108,14 @@ body {
     height: 100vh;
     perspective: 1000px;
     position: absolute;
-    //background: linear-gradient(rgb(82, 147, 252), rgb(70, 57, 250));
-    // background: linear-gradient(rgb(17, 17, 17), rgb(32, 32, 32));
     background: #fff;
     font-family: $heebo;
+    transition: ease .5s;
+    transform: translateY(100px);
+}
+
+.mainIn {
+    transform: translateY(0px);
 }
 
 .main-branding {
@@ -86,9 +139,6 @@ body {
 }
 
 .main-content {
-    // Depth fix
-    // -webkit-transform: translateZ(200px); // Needs rescale
-
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -105,27 +155,52 @@ body {
 }
 
 .main-title {
+    display: flex;
     color: white;
     font-size: 60px;
-    // font-weight: 900;
-    position: absolute;
-    text-align: left;
-    margin: auto;   
-    // left: 390px;
-    font-family: $museo-light; 
-
+    text-transform: uppercase;
+    text-align: center;
+    margin-right: 10px; 
+    font-family: $museo-light;
+    z-index: 99;
     & > span {
-        cursor: pointer;
-        transition: ease .5s;
+        flex: none;
+        white-space: pre;    
+        display: block;
+        position: relative;
+        // transition: ease .5s;
+        opacity: 0;
+        transform: translateY(0px);
+        will-change: opacity, transform;
     }
+}
 
-    & > span:hover {
-        transform: scale(1.1);
+.sub-title {
+    position: absolute;
+    display: flex;
+    margin-top: 100px;
+}
+
+.sub-title p {
+    display: flex;
+    color: white;
+    font-size: 25px;
+    z-index: 99;
+    margin-top: 150px;
+    & > span {
+        flex: none;
+        white-space: pre;    
+        display: block;
+        position: relative;
+        // transition: ease .5s;
+        opacity: 0;
+        transform: translateY(0px);
+        will-change: opacity, transform;
     }
 }
 
 .main-title > span {
-    display: block;
+    // display: block;
     transition: ease .6s;
 }
 

@@ -2,12 +2,37 @@
 // By James with ❤
 // Copyright Bungee Design Limited 2019
 
-// Node Module Imports
-// import { charming } from "charming";
+// Module Imports (Bundler Webpack - Transpiler Babel)
+// import  charming  from "charming"; // Try require
+import anime from '../node_modules/animejs/lib/anime.es.js';
+import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
+
+
+// Preloader
+const getRandomColour = () => {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+const loaderCirc = document.querySelectorAll('.loaderCircle');
+    anime({
+        targets: loaderCirc,
+        duration: 4500,
+        delay: function(el, index) { return index*500; },
+        easing: 'easeOutExpo',
+        opacity: 1,
+        scale: '1.8',
+        color: getRandomColour(),
+        autoplay: true
+    });
+
 
 // Wait for DOM to load then run Init
-window.addEventListener('load', () => {
-    init();
+window.addEventListener('load', (e) => {
+    init(e);
 });
 
 
@@ -18,25 +43,80 @@ const background = document.querySelector('.main-bg-image');
 const titleContact = document.querySelector('.title-contact');
 const mainBranding = document.querySelector('.main-branding');
 const mainTitle = document.querySelector('.main-title');
+const interfaceCursor = document.querySelector('.interfaceCursor');
+const innerCircle = document.querySelector('.innerCircle');
+
+// Global Listeners
+document.addEventListener('mousemove', (e) => {
+    handleInterfaceCursor(e);
+});
+
+/* 
+
+Flags
+
+*/
+
+let isLoaded = false;
 
 // DOM has loaded
 function init() {
-    setInterval(() => {
+    setTimeout(() => {
         preloaderLoaded();
-    }, 700);
+    }, 1200);
 }
 
 function preloaderLoaded() {
     preloader.classList.add('preloader-loaded');
+    mainSection.classList.add('mainIn');
+    isLoaded = true;
+    titleEffect();
 }
 
 function titleEffect() {
     // Get all elements with data-effect attribute
     const charmingElems = document.querySelectorAll('[data-effect]');
     charmingElems.forEach((charElem) => {
+        charming(charElem, {
+            classPrefix: 'letter'});
+    });
 
-        charming(charElem);
-        
+    let chars = document.querySelectorAll('.main-title span');
+    let subChars = document.querySelectorAll('.sub-title p span');
+
+    let aniMainTitle = anime({
+        targets: [chars, subChars],
+        duration: 200,
+        delay: function(el, index) { return index*40; },
+        easing: 'easeOutExpo',
+        opacity: 1,
+        translateY: '-100',
+        autoplay: false
+    })
+
+    aniMainTitle.play();
+}
+
+const handleInterfaceCursor = e => {
+    // Start position
+    let clientX = -100;
+    let clientY = -100;
+
+    clientX = e.clientX;
+    clientY = e.clientY;
+
+    // interfaceCursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
+
+    // Using TweenMax for animation performance other option would be requestAnimationFrame()
+    TweenMax.to(interfaceCursor, .2, {
+      x: clientX,
+      y: clientY,
+      ease: Power2.ease
+    });
+
+    TweenMax.to(innerCircle, .6, {
+      x: clientX,
+      y: clientY,
+      ease: Power2.ease
     });
 }
-titleEffect();

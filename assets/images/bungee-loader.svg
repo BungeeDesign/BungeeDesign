@@ -4,41 +4,6 @@
             .cls-1 {
                 fill: white;
             }
-
-            .bungee {
-                animation: bungee infinite alternate-reverse ease .8s;
-            }
-
-            .bCircle {
-                animation-delay: .3s;
-            }
-
-            .mCircle {
-                animation-delay: .4s;
-            }
-
-            .tCircle {
-                 animation-delay: .5s;
-            }
-
-            .body {
-                animation-delay: .3s;
-            }
-
-            @keyframes bungee {
-                0% {
-
-                    transform: translateY(0px);
-
-                }
-
-                100% {
-
-                    transform: translateY(50px);
-
-                }
-
-            }
         </style>
     </defs>
     <title>bungee-design</title>

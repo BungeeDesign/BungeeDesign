@@ -2,14 +2,16 @@
 @import url("https://fonts.googleapis.com/css?family=Heebo:200,300,400,900");
 @import url("https://use.typekit.net/ppt8fxq.css");
 body {
+  background: black;
   margin: 0px;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  cursor: none;
 }
 
 .preloader {
-  -webkit-transition: cubic-bezier(1, 0.13, 0.39, 0.98) 0.5s;
-  transition: cubic-bezier(1, 0.13, 0.39, 0.98) 0.5s;
+  -webkit-transition: cubic-bezier(1, 0.13, 0.39, 0.98) 0.9s;
+  transition: cubic-bezier(1, 0.13, 0.39, 0.98) 0.9s;
   position: fixed;
   text-align: center;
   background: black;
@@ -19,8 +21,8 @@ body {
 }
 
 .preloader img {
-  margin-top: 300px;
-  width: 150px;
+  margin-top: 400px;
+  width: 50px;
   text-align: center;
 }
 
@@ -32,9 +34,58 @@ body {
   display: block;
 }
 
+.loaderWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loaderCircle {
+  opacity: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 4px 4px 4px 4px;
+  border-radius: 50%;
+  color: white;
+  width: 300px;
+  height: 300px;
+  margin-top: 460px;
+}
+
 .preloader-loaded {
-  -webkit-transform: translateY(3000px);
-          transform: translateY(3000px);
+  opacity: 0;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.interfaceCursor {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  color: white;
+  position: fixed;
+  left: -40px;
+  top: -40px;
+  z-index: 999;
+}
+
+.innerCircle {
+  width: 10px;
+  height: 10px;
+  position: fixed;
+  border-radius: 50%;
+  background: white;
+  z-index: 11111;
+  left: -18.5px;
+  top: -18.5px;
 }
 
 .main {
@@ -45,6 +96,15 @@ body {
   position: absolute;
   background: #fff;
   font-family: "Heebo", sans-serif;
+  -webkit-transition: ease .5s;
+  transition: ease .5s;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+}
+
+.mainIn {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 .main-branding {
@@ -91,27 +151,63 @@ body {
 }
 
 .main-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: white;
   font-size: 60px;
-  position: absolute;
-  text-align: left;
-  margin: auto;
+  text-transform: uppercase;
+  text-align: center;
+  margin-right: 10px;
   font-family: "museo-sans-display", sans-serif;
+  z-index: 99;
 }
 
 .main-title > span {
-  cursor: pointer;
-  -webkit-transition: ease .5s;
-  transition: ease .5s;
-}
-
-.main-title > span:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.main-title > span {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  white-space: pre;
   display: block;
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  will-change: opacity, transform;
+}
+
+.sub-title {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 100px;
+}
+
+.sub-title p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-size: 25px;
+  z-index: 99;
+  margin-top: 150px;
+}
+
+.sub-title p > span {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  white-space: pre;
+  display: block;
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  will-change: opacity, transform;
+}
+
+.main-title > span {
   -webkit-transition: ease .6s;
   transition: ease .6s;
 }
@@ -127,8 +223,8 @@ body {
 
 @-webkit-keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(304deg);
-            filter: hue-rotate(304deg);
+    -webkit-filter: hue-rotate(266deg);
+            filter: hue-rotate(266deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -138,8 +234,8 @@ body {
 
 @keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(304deg);
-            filter: hue-rotate(304deg);
+    -webkit-filter: hue-rotate(266deg);
+            filter: hue-rotate(266deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);

@@ -14,19 +14,35 @@
 </head>
 <body>
     <main>
+        <div class="innerCircle"></div>    
+        <div class="interfaceCursor">
+        </div>
         <section class="preloader">
+            <div class="loaderWrapper">
+                <div class="loaderCircle"></div>
+                <div class="loaderCircle"></div>
+                <div class="loaderCircle"></div>
+                <div class="loaderCircle"></div>
+                <div class="loaderCircle"></div>
+            </div>
             <img src="assets/images/bungee-loader.svg" alt="">
-            <span class="preloader-title">Loading...</span>
+            <!-- <span class="preloader-title">LOADING</span> -->
         </section>
         <section class="main">
                 <div class="main-bg-image">
                     <div id="gl" data-imageOriginal="assets/images/beauty.png" data-imageDepth="assets/images/z-depth-pass-2.png" data-horizontalThreshold="35" data-verticalThreshold="15"></div>
                 </div>
             <div class="main-content">
-                <div class="main-title" data-effect='titleIn'>
-                    We are Bungee Design.
-                </div>
+                <!-- <div class="main-title" data-effect='titleIn'>We</div>
+                <div></div>
+                <div class="main-title" data-effect='titleIn'>Are</div>
+                <div></div> -->
+                <div class="main-title" data-effect='titleIn'>Bungee</div>
+                <div class="main-title" data-effect='titleIn'>Design</div>
+
+                <div class="sub-title"><p data-effect='titleIn'>The creative development and design company.</p></div>
             </div>
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 181"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><title>rope-svg</title><path class="cls-1" d="M13,0C13,18.1,1,18.1,1,36.2S13,54.3,13,72.4,1,90.5,1,108.59,13,126.7,13,144.8,1,162.9,1,181"/></svg>
         </section>
         <section class="devScroll">
 
@@ -37,7 +53,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 <script src="js/helpers.js"></script>
 <script src='https://bundle.run/charming'></script>
-<script src="js/index.js"></script>
-<!-- <script src="dist/bundle.js"></script> -->
+<!-- <script src="js/index.js"></script> -->
+<script src="dist/bundle.js"></script>
 <script type="module" src="js/depth.js"></script>
 </html>
