@@ -90,6 +90,7 @@ body {
     top: -40px;
     z-index: 999;
     // opacity: .3;
+    pointer-events: none;
 }
 
 .innerCircle {
@@ -101,6 +102,7 @@ body {
     z-index: 11111;
     left: -18.5px;
     top: -18.5px;
+    pointer-events: none;
 }
 
 .main {
@@ -240,12 +242,30 @@ body {
     position: absolute;
 }
 
-// exitPage Animation
+// Take the leap SVG
+.scrollPrompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.main svg {
+    position: absolute;
+    width: 1%;
+}
 
-.exitPage {
-    transform: translateX(40px);
-    opacity: 0;
+.scrollPrompt svg path {
+    stroke-dasharray: 10;
+}
+
+.prompt-title {
+    position: absolute;
+    font-family: "museo-sans-display", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    z-index: 99;
+    margin-top: -140px;
+    color: white;
 }
 
 // Media Queries 

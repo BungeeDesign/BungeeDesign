@@ -45,11 +45,7 @@ const mainBranding = document.querySelector('.main-branding');
 const mainTitle = document.querySelector('.main-title');
 const interfaceCursor = document.querySelector('.interfaceCursor');
 const innerCircle = document.querySelector('.innerCircle');
-
-// Global Listeners
-document.addEventListener('mousemove', (e) => {
-    handleInterfaceCursor(e);
-});
+const promptTitle = document.querySelector('.scrollPrompt');
 
 /* 
 
@@ -58,6 +54,20 @@ Flags
 */
 
 let isLoaded = false;
+let isCursorStuck = false;
+
+// Global Listeners
+document.addEventListener('mousemove', (e) => {
+    if (!isCursorStuck) {
+        handleInterfaceCursor(e);
+    }
+});
+
+promptTitle.addEventListener('mouseover', (e) => {
+    cursorPromptAnimation();
+});
+
+
 
 // DOM has loaded
 function init() {
@@ -68,6 +78,7 @@ function init() {
 
 function preloaderLoaded() {
     preloader.classList.add('preloader-loaded');
+    setTimeout(() => {preloader.style.display = 'none';}, 1500);
     mainSection.classList.add('mainIn');
     isLoaded = true;
     titleEffect();
@@ -95,6 +106,37 @@ function titleEffect() {
     })
 
     aniMainTitle.play();
+}
+
+const promptAnimation = () => {
+    // const scrollPromptPath = document.querySelector('.scrollPrompt svg path');
+    anime({
+        targets: '.scrollPrompt svg path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'linear',
+        duration: 30500,
+        // delay: function(el, i) { return i * 10 },
+        // direction: 'reverse',
+        loop: true
+      });
+}
+promptAnimation();
+
+const cursorPromptAnimation = () => {
+    console.log('Cursor Prmopt Animation');
+    isCursorStuck = true;
+    // document.removeEventListener('mousemove');
+
+    // anime({
+    //     targets: [interfaceCursor, innerCircle],
+    //     strokeDashoffset: [anime.setDashoffset, 0],
+    //     easing: 'linear',
+    //     duration: 30500,
+    //     // delay: function(el, i) { return i * 10 },
+    //     // direction: 'reverse',
+    //     loop: true
+    //   });
+
 }
 
 const handleInterfaceCursor = e => {

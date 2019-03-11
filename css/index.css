@@ -75,6 +75,7 @@ body {
   left: -40px;
   top: -40px;
   z-index: 999;
+  pointer-events: none;
 }
 
 .innerCircle {
@@ -86,6 +87,7 @@ body {
   z-index: 11111;
   left: -18.5px;
   top: -18.5px;
+  pointer-events: none;
 }
 
 .main {
@@ -223,8 +225,8 @@ body {
 
 @-webkit-keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(266deg);
-            filter: hue-rotate(266deg);
+    -webkit-filter: hue-rotate(333deg);
+            filter: hue-rotate(333deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -234,8 +236,8 @@ body {
 
 @keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(266deg);
-            filter: hue-rotate(266deg);
+    -webkit-filter: hue-rotate(333deg);
+            filter: hue-rotate(333deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -256,10 +258,35 @@ body {
   position: absolute;
 }
 
-.exitPage {
-  -webkit-transform: translateX(40px);
-          transform: translateX(40px);
-  opacity: 0;
+.scrollPrompt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main svg {
+  position: absolute;
+  width: 1%;
+}
+
+.scrollPrompt svg path {
+  stroke-dasharray: 10;
+}
+
+.prompt-title {
+  position: absolute;
+  font-family: "museo-sans-display", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  z-index: 99;
+  margin-top: -140px;
+  color: white;
 }
 
 @media (max-width: 1400px) {
