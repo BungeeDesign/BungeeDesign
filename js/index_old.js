@@ -4,7 +4,7 @@
 
 // Wait for DOM to load then run Init
 window.addEventListener('load', () => {
-    init();
+  init();
 });
 
 // Globally scoped
@@ -21,163 +21,172 @@ const mainBranding = document.querySelector('.main-branding');
 // window.addEventListener('deviceorientation', mobileBackgroundAnimation);
 
 if (isMobileDevice == true) {
-    window.addEventListener('deviceorientation', mobileBackgroundAnimation);
+  window.addEventListener('deviceorientation', mobileBackgroundAnimation);
 } else {
-    mainSection.addEventListener('mousemove', backgroundAnimation);
-    mainSection.addEventListener('mouseout', backgroundAnimationOut);
+  mainSection.addEventListener('mousemove', backgroundAnimation);
+  mainSection.addEventListener('mouseout', backgroundAnimationOut);
 }
 
 // Event flag
-let mousemove = true;
+const mousemove = true;
 
 // DOM has loaded
 function init() {
+  setInterval(() => {
+    preloaderLoaded();
+  }, 700);
 
-    setInterval(() => {
-        preloaderLoaded();
-    }, 700);
-
-    landingItems();
+  landingItems();
 }
 
 function preloaderLoaded() {
-    preloader.classList.add('preloader-loaded');
+  preloader.classList.add('preloader-loaded');
 }
 
 function backgroundAnimation(e, type, alpha, beta, gamma) {
-    let x = 0;
-    let y = 0;
-    let z = 0;
+  let x = 0;
+  let y = 0;
+  let z = 0;
 
-    // Get center point of image
-    let imageLeft = getElementOffset(background).left;
-    let imageTop =  getElementOffset(background).top;
+  // Get center point of image
+  const imageLeft = getElementOffset(background).left;
+  const imageTop = getElementOffset(background).top;
 
-    let imageCenterX = imageLeft + background.offsetWidth / 2;
-    let imageCenterY = imageTop + background.offsetHeight / 2;
+  const imageCenterX = imageLeft + background.offsetWidth / 2;
+  const imageCenterY = imageTop + background.offsetHeight / 2;
 
-    // Cursor or Gyro values
+  // Cursor or Gyro values
 
-    if (type == 'gyro') {
-        x = beta + 90;
-        y = gamma + 180;
-        // z = alpha - 180;
-        // x = x / 30;
-        // y = y / 30;
-        // z = z / 30;
-    } else {
-        // Cursor
-        x = e.clientX - imageCenterX;
-        y = e.clientY - imageCenterY;
-        z = 0;
-        x = x / 30;
-        y = y / 30;
-        z = 0;
-    }
+  if (type == 'gyro') {
+    x = beta + 90;
+    y = gamma + 180;
+    // z = alpha - 180;
+    // x = x / 30;
+    // y = y / 30;
+    // z = z / 30;
+  } else {
+    // Cursor
+    x = e.clientX - imageCenterX;
+    y = e.clientY - imageCenterY;
+    z = 0;
+    x /= 30;
+    y /= 30;
+    z = 0;
+  }
 
-    // Add roate 3D property via TweenMax this makes the movement smooth and removes lag!
-    TweenMax.to(background, 2, {rotationX:`${x}deg`, rotationY:`${y}deg`, scale:".9", ease:Elastic.easeOut});
-
+  // Add roate 3D property via TweenMax this makes the movement smooth and removes lag!
+  TweenMax.to(background, 2, {
+    rotationX: `${x}deg`,
+    rotationY: `${y}deg`,
+    scale: '.9',
+    ease: Elastic.easeOut,
+  });
 }
 
 function backgroundAnimationOut() {
-    TweenMax.to(background, 2, {rotationX:"0deg", rotationY:"0deg", scale:".9", ease:Elastic.easeOut});
+  TweenMax.to(background, 2, {
+    rotationX: '0deg',
+    rotationY: '0deg',
+    scale: '.9',
+    ease: Elastic.easeOut,
+  });
 }
 
 function mobileBackgroundAnimation() {
-    let x = event.alpha;
-    let y = event.beta;
-    let z = event.gamma;
+  const x = event.alpha;
+  const y = event.beta;
+  const z = event.gamma;
 
-    // Call backgroundAnimation function
-    backgroundAnimation(undefined, 'gyro', x, y, z);
+  // Call backgroundAnimation function
+  backgroundAnimation(undefined, 'gyro', x, y, z);
 
-    // Log device value
-    console.log('Device Position: ' + x, y, z);
+  // Log device value
+  console.log(`Device Position: ${x}`, y, z);
 }
 
 function landingItems() {
+  titleWebsite.addEventListener('mouseover', borderAdd);
+  titleWebsite.addEventListener('mouseout', borderRemove);
+  titleWebsite.addEventListener('click', e => {
+    initSection(e, 'websites');
+  });
 
-    titleWebsite.addEventListener('mouseover', borderAdd)
-    titleWebsite.addEventListener('mouseout', borderRemove);
-    titleWebsite.addEventListener('click', (e) => { initSection(e, 'websites'); });
+  titleBranding.addEventListener('mouseover', borderAdd);
+  titleBranding.addEventListener('mouseout', borderRemove);
+  titleBranding.addEventListener('click', e => {
+    initSection(e, 'branding');
+  });
 
-    titleBranding.addEventListener('mouseover', borderAdd)
-    titleBranding.addEventListener('mouseout', borderRemove);
-    titleBranding.addEventListener('click', (e) => { initSection(e, 'branding'); });
-    
-    titleFilm.addEventListener('mouseover', borderAdd);
-    titleFilm.addEventListener('mouseout', borderRemove);
-    titleFilm.addEventListener('click', (e) => { initSection(e, 'film'); });
+  titleFilm.addEventListener('mouseover', borderAdd);
+  titleFilm.addEventListener('mouseout', borderRemove);
+  titleFilm.addEventListener('click', e => {
+    initSection(e, 'film');
+  });
 }
 
 function borderAdd(e) {
+  const item = e.currentTarget.textContent;
+  let colour = '';
 
-    let item = e.currentTarget.textContent;
-    let colour = '';
+  console.log(item);
 
-    console.log(item);
+  if (item == 'Websites') {
+    colour = '0085ff';
+  } else if (item == 'Branding') {
+    colour = 'ff2870';
+  } else if (item == 'Film') {
+    colour = '6e28ff';
+  }
 
-    if (item == 'Websites') {
-        colour = '0085ff';
-    } else if (item == 'Branding') {
-        colour = 'ff2870';
-    } else if (item == 'Film') {
-        colour = '6e28ff';
-    }
-
-    background.style.animation = 'none';
-    background.style.borderLeft = `solid #${colour} 870px`;
+  background.style.animation = 'none';
+  background.style.borderLeft = `solid #${colour} 870px`;
 }
 
 function borderRemove() {
-    background.style.animation = 'colorCycle infinite linear 8s alternate-reverse';
-    background.style.borderLeft = 'solid #0085ff 0px';
+  background.style.animation =
+    'colorCycle infinite linear 8s alternate-reverse';
+  background.style.borderLeft = 'solid #0085ff 0px';
 }
-
 
 // Sections
 
 function initSection(e, section) {
+  // Remove menu/landing items events due to mouse event movement on transition
+  titleWebsite.removeEventListener('mouseout', borderRemove);
+  titleWebsite.removeEventListener('mouseover', borderAdd);
 
-    // Remove menu/landing items events due to mouse event movement on transition
-    titleWebsite.removeEventListener('mouseout', borderRemove);
-    titleWebsite.removeEventListener('mouseover', borderAdd);
+  titleBranding.removeEventListener('mouseout', borderRemove);
+  titleBranding.removeEventListener('mouseover', borderAdd);
 
-    titleBranding.removeEventListener('mouseout', borderRemove);
-    titleBranding.removeEventListener('mouseover', borderAdd);
+  titleFilm.removeEventListener('mouseout', borderRemove);
+  titleFilm.removeEventListener('mouseover', borderAdd);
 
-    titleFilm.removeEventListener('mouseout', borderRemove);
-    titleFilm.removeEventListener('mouseover', borderAdd);
+  // Remove mousemove/out events due to conflicting property changes
+  mainSection.removeEventListener('mousemove', backgroundAnimation);
+  mainSection.removeEventListener('mouseout', backgroundAnimationOut);
 
-    // Remove mousemove/out events due to conflicting property changes
-    mainSection.removeEventListener('mousemove', backgroundAnimation); 
-    mainSection.removeEventListener('mouseout', backgroundAnimationOut);
+  // Get the current matrix3D value and set to the element
+  const matrix3D = background.style.transform;
+  background.style.transform = matrix3D;
 
-    // Get the current matrix3D value and set to the element
-    let matrix3D = background.style.transform;
-    background.style.transform = matrix3D;
-  
-    // Start the transition animation
-    background.style.borderLeftWidth = '2500px';
-    TweenMax.to(background, 4, {scale:"4.9", ease:Power3.easeInOut});
+  // Start the transition animation
+  background.style.borderLeftWidth = '2500px';
+  TweenMax.to(background, 4, { scale: '4.9', ease: Power3.easeInOut });
 
-    // Set out transition for menu items and logo
-    titleWebsite.classList.toggle('exitPage');
-    titleBranding.classList.toggle('exitPage');
-    titleFilm.classList.toggle('exitPage');
-    titleContact.classList.toggle('exitPage');
-    mainBranding.classList.toggle('exitPage');
+  // Set out transition for menu items and logo
+  titleWebsite.classList.toggle('exitPage');
+  titleBranding.classList.toggle('exitPage');
+  titleFilm.classList.toggle('exitPage');
+  titleContact.classList.toggle('exitPage');
+  mainBranding.classList.toggle('exitPage');
 
-    if (section == 'websites') {
-        setInterval(() => {
-            window.location = 'websites.html';
-        }, 1600)
-    } else if (section == 'branding') {
-        console.log('brnading');
-    } else if (section == 'film') {
-        console.log('film');
-    }
-
+  if (section == 'websites') {
+    setInterval(() => {
+      window.location = 'websites.html';
+    }, 1600);
+  } else if (section == 'branding') {
+    console.log('brnading');
+  } else if (section == 'film') {
+    console.log('film');
+  }
 }
-

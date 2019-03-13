@@ -4,37 +4,38 @@
 
 // Module Imports (Bundler Webpack - Transpiler Babel)
 // import  charming  from "charming"; // Try require
+import { TweenMax, Power2, TimelineLite } from 'gsap/TweenMax';
 import anime from '../node_modules/animejs/lib/anime.es.js';
-import {TweenMax, Power2, TimelineLite} from "gsap/TweenMax";
-
 
 // Preloader
 const getRandomColour = () => {
-    let letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
 const loaderCirc = document.querySelectorAll('.loaderCircle');
-    anime({
-        targets: loaderCirc,
-        duration: 4500,
-        delay: function(el, index) { return index*500; },
-        easing: 'easeOutExpo',
-        opacity: 1,
-        scale: '1.8',
-        color: getRandomColour(),
-        autoplay: true
-    });
 
-
-// Wait for DOM to load then run Init
-window.addEventListener('load', (e) => {
-    init(e);
+anime({
+  targets: loaderCirc,
+  duration: 4500,
+  delay(el, index) {
+    return index * 500;
+  },
+  easing: 'easeOutExpo',
+  opacity: 1,
+  scale: '1.8',
+  color: getRandomColour(),
+  autoplay: true,
 });
 
+// Wait for DOM to load then run Init
+window.addEventListener('load', e => {
+  init(e);
+});
 
 // Globally scoped
 const preloader = document.querySelector('.preloader');
@@ -57,108 +58,110 @@ let isLoaded = false;
 let isCursorStuck = false;
 
 // Global Listeners
-document.addEventListener('mousemove', (e) => {
-    if (!isCursorStuck) {
-        handleInterfaceCursor(e);
-    }
+document.addEventListener('mousemove', e => {
+  if (!isCursorStuck) {
+    handleInterfaceCursor(e);
+  }
 });
 
-promptTitle.addEventListener('mouseover', (e) => {
-    cursorPromptAnimation();
+promptTitle.addEventListener('mouseover', e => {
+  cursorPromptAnimation();
 });
-
-
 
 // DOM has loaded
 function init() {
-    setTimeout(() => {
-        preloaderLoaded();
-    }, 1200);
+  setTimeout(() => {
+    preloaderLoaded();
+  }, 1200);
 }
 
 function preloaderLoaded() {
-    preloader.classList.add('preloader-loaded');
-    setTimeout(() => {preloader.style.display = 'none';}, 1500);
-    mainSection.classList.add('mainIn');
-    isLoaded = true;
-    titleEffect();
+  preloader.classList.add('preloader-loaded');
+  setTimeout(() => {
+    preloader.style.display = 'none';
+  }, 1500);
+  mainSection.classList.add('mainIn');
+  isLoaded = true;
+  titleEffect();
 }
 
 function titleEffect() {
-    // Get all elements with data-effect attribute
-    const charmingElems = document.querySelectorAll('[data-effect]');
-    charmingElems.forEach((charElem) => {
-        charming(charElem, {
-            classPrefix: 'letter'});
+  // Get all elements with data-effect attribute
+  const charmingElems = document.querySelectorAll('[data-effect]');
+  charmingElems.forEach(charElem => {
+    charming(charElem, {
+      classPrefix: 'letter',
     });
+  });
 
-    let chars = document.querySelectorAll('.main-title span');
-    let subChars = document.querySelectorAll('.sub-title p span');
+  const chars = document.querySelectorAll('.main-title span');
+  const subChars = document.querySelectorAll('.sub-title p span');
 
-    let aniMainTitle = anime({
-        targets: [chars, subChars],
-        duration: 200,
-        delay: function(el, index) { return index*40; },
-        easing: 'easeOutExpo',
-        opacity: 1,
-        translateY: '-100',
-        autoplay: false
-    })
+  const aniMainTitle = anime({
+    targets: [chars, subChars],
+    duration: 200,
+    delay(el, index) {
+      return index * 40;
+    },
+    easing: 'easeOutExpo',
+    opacity: 1,
+    translateY: '-100',
+    autoplay: false,
+  });
 
-    aniMainTitle.play();
+  aniMainTitle.play();
 }
 
 const promptAnimation = () => {
-    // const scrollPromptPath = document.querySelector('.scrollPrompt svg path');
-    anime({
-        targets: '.scrollPrompt svg path',
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'linear',
-        duration: 30500,
-        // delay: function(el, i) { return i * 10 },
-        // direction: 'reverse',
-        loop: true
-      });
-}
+  // const scrollPromptPath = document.querySelector('.scrollPrompt svg path');
+  anime({
+    targets: '.scrollPrompt svg path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'linear',
+    duration: 30500,
+    // delay: function(el, i) { return i * 10 },
+    // direction: 'reverse',
+    loop: true,
+  });
+};
 promptAnimation();
 
 const cursorPromptAnimation = () => {
-    console.log('Cursor Prmopt Animation');
-    isCursorStuck = true;
-    // document.removeEventListener('mousemove');
+  console.log('Cursor Prmopt Animation');
+  isCursorStuck = true;
+  // document.removeEventListener('mousemove');
 
-    // anime({
-    //     targets: [interfaceCursor, innerCircle],
-    //     strokeDashoffset: [anime.setDashoffset, 0],
-    //     easing: 'linear',
-    //     duration: 30500,
-    //     // delay: function(el, i) { return i * 10 },
-    //     // direction: 'reverse',
-    //     loop: true
-    //   });
-
-}
+  // anime({
+  //     targets: [interfaceCursor, innerCircle],
+  //     strokeDashoffset: [anime.setDashoffset, 0],
+  //     easing: 'linear',
+  //     duration: 30500,
+  //     // delay: function(el, i) { return i * 10 },
+  //     // direction: 'reverse',
+  //     loop: true
+  //   });
+};
 
 const handleInterfaceCursor = e => {
-    // Start position
-    let clientX = -100;
-    let clientY = -100;
+  // Start position
+  let clientX = -100;
+  let clientY = -100;
 
-    clientX = e.clientX;
-    clientY = e.clientY;
+  clientX = e.clientX;
+  clientY = e.clientY;
 
-    // interfaceCursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
+  // interfaceCursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
 
-    // Using TweenMax for animation performance other option would be requestAnimationFrame()
-    TweenMax.to(interfaceCursor, .2, {
-      x: clientX,
-      y: clientY,
-      ease: Power2.ease
-    });
+  // Using TweenMax for animation performance other option would be requestAnimationFrame()
+  TweenMax.to(interfaceCursor, 0.2, {
+    x: clientX,
+    y: clientY,
+    ease: Power2.ease,
+  });
 
-    TweenMax.to(innerCircle, .6, {
-      x: clientX,
-      y: clientY,
-      ease: Power2.ease
-    });
-}
+  TweenMax.to(innerCircle, 0.6, {
+    x: clientX,
+    y: clientY,
+    ease: Power2.ease,
+  });
+};
