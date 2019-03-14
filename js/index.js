@@ -1,11 +1,11 @@
 // Index.js
-// By James with ❤
+// By James built with ❤
 // Copyright Bungee Design Limited 2019
 
 // Module Imports (Bundler Webpack - Transpiler Babel)
 // import  charming  from "charming"; // Try require
 import { TweenMax, Power2, TimelineLite } from 'gsap/TweenMax';
-import anime from '../node_modules/animejs/lib/anime.es.js';
+// import anime from '../node_modules/animejs/lib/anime.es.js';
 
 // Preloader
 const getRandomColour = () => {
@@ -129,17 +129,27 @@ promptAnimation();
 const cursorPromptAnimation = () => {
   console.log('Cursor Prmopt Animation');
   isCursorStuck = true;
-  // document.removeEventListener('mousemove');
 
-  // anime({
-  //     targets: [interfaceCursor, innerCircle],
-  //     strokeDashoffset: [anime.setDashoffset, 0],
-  //     easing: 'linear',
-  //     duration: 30500,
-  //     // delay: function(el, i) { return i * 10 },
-  //     // direction: 'reverse',
-  //     loop: true
-  //   });
+  // Reset top/left values
+  // innerCircle.classList.remove('innerCircle');
+  // innerCircle.classList.add('innerCirclePrompt');
+
+  // interfaceCursor.classList.remove('interfaceCursor');
+  // interfaceCursor.classList.add('interfaceCursorPrompt');
+
+  // Get the current Y Postiton
+  // const innerCirclePos = innerCircle.getBoundingClientRect();
+  // const interfaceCursorPos = interfaceCursor.getBoundingClientRect();
+
+  const innerCircleStyle = window.getComputedStyle(innerCircle);
+  const icpMatrix = new WebKitCSSMatrix(innerCircleStyle.webkitTransform);
+  const innerCirclePosY = icpMatrix.m42;
+  const toValueY = innerCirclePosY + 300;
+
+  TweenMax.to([innerCircle, interfaceCursor], 0.9, {
+    y: toValueY,
+    ease: Power2.ease,
+  });
 };
 
 const handleInterfaceCursor = e => {

@@ -71,9 +71,21 @@ body {
   border-style: solid;
   border-width: 2px;
   color: white;
-  position: fixed;
+  position: absolute;
   left: -40px;
   top: -40px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.interfaceCursorPrompt {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  color: white;
+  position: absolute;
   z-index: 999;
   pointer-events: none;
 }
@@ -81,12 +93,22 @@ body {
 .innerCircle {
   width: 10px;
   height: 10px;
-  position: fixed;
+  position: absolute;
   border-radius: 50%;
   background: white;
   z-index: 11111;
   left: -18.5px;
   top: -18.5px;
+  pointer-events: none;
+}
+
+.innerCirclePrompt {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  z-index: 11111;
   pointer-events: none;
 }
 
@@ -225,8 +247,8 @@ body {
 
 @-webkit-keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(293deg);
-            filter: hue-rotate(293deg);
+    -webkit-filter: hue-rotate(299deg);
+            filter: hue-rotate(299deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -236,8 +258,8 @@ body {
 
 @keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(293deg);
-            filter: hue-rotate(293deg);
+    -webkit-filter: hue-rotate(299deg);
+            filter: hue-rotate(299deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -366,5 +388,12 @@ body {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: green;
 }
 /*# sourceMappingURL=index.css.map */
