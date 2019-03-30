@@ -4,7 +4,10 @@
 
 // Module Imports (Bundler Webpack - Transpiler Babel)
 // import  charming  from "charming"; // Try require
-import { TweenMax, Power2, TimelineLite } from 'gsap/TweenMax';
+import { TweenMax, Power2, TimelineLite, TweenLite } from 'gsap/TweenMax';
+import jump from '../node_modules/jump.js/dist/jump.module.js';
+import smoothScroll from 'smooth-scroll';
+
 // import anime from '../node_modules/animejs/lib/anime.es.js';
 
 // Preloader
@@ -40,6 +43,7 @@ window.addEventListener('load', e => {
 // Globally scoped
 const preloader = document.querySelector('.preloader');
 const mainSection = document.querySelector('.main');
+const introSection = document.querySelector('.intro');
 const background = document.querySelector('.main-bg-image');
 const titleContact = document.querySelector('.title-contact');
 const mainBranding = document.querySelector('.main-branding');
@@ -130,17 +134,6 @@ const cursorPromptAnimation = () => {
   console.log('Cursor Prmopt Animation');
   isCursorStuck = true;
 
-  // Reset top/left values
-  // innerCircle.classList.remove('innerCircle');
-  // innerCircle.classList.add('innerCirclePrompt');
-
-  // interfaceCursor.classList.remove('interfaceCursor');
-  // interfaceCursor.classList.add('interfaceCursorPrompt');
-
-  // Get the current Y Postiton
-  // const innerCirclePos = innerCircle.getBoundingClientRect();
-  // const interfaceCursorPos = interfaceCursor.getBoundingClientRect();
-
   const innerCircleStyle = window.getComputedStyle(innerCircle);
   const icpMatrix = new WebKitCSSMatrix(innerCircleStyle.webkitTransform);
   const innerCirclePosY = icpMatrix.m42;
@@ -150,6 +143,30 @@ const cursorPromptAnimation = () => {
     y: toValueY,
     ease: Power2.ease,
   });
+
+  let scroll = new smoothScroll('.intro-scroll-anchor', {
+    speed: 1000,
+    speedAsDuration: true,
+    easing: 'easeInOutQuint'
+  });
+  scroll.animateScroll(1500);
+
+  // Set Intro Section to Overflow hidden once cursor has eneterd intro section
+  introSection.style.overflow = 'hidden';
+
+  // Inner Circle Intro Section Transition
+  TweenMax.to(innerCircle, 0.9, {
+    scale: 10,
+    ease: Power2.ease
+  }).delay(.3);
+
+  // Animate The Cloned Circle
+  const circleClone = document.querySelector('.inner-circle-clone');
+  setTimeout(() => {
+    circleClone.classList.add('inner-circle-clone-full');
+    // Show the cursor again
+    document.querySelector('body').style.cursor = 'default';
+  }, 600);
 };
 
 const handleInterfaceCursor = e => {
