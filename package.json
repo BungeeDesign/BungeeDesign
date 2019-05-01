@@ -9,7 +9,9 @@
     "ez.js": "^1.0.3",
     "gsap": "^2.1.2",
     "jump.js": "^1.0.2",
-    "now": "^14.0.3"
+    "now": "^14.0.3",
+    "scrollreveal": "^4.0.5",
+    "smooth-scroll": "^16.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",

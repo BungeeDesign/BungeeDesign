@@ -1,12 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One");
 @import url("https://fonts.googleapis.com/css?family=Heebo:200,300,400,900");
 @import url("https://use.typekit.net/ppt8fxq.css");
+@import url("https://fonts.googleapis.com/css?family=Barlow");
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+body {
+  scrollbar-face-color: #333333;
+  scrollbar-track-color: black;
+}
+
 body {
   background: black;
   margin: 0px;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-y: hidden;
   cursor: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 .preloader {
@@ -247,8 +272,8 @@ body {
 
 @-webkit-keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(323deg);
-            filter: hue-rotate(323deg);
+    -webkit-filter: hue-rotate(258deg);
+            filter: hue-rotate(258deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -258,8 +283,8 @@ body {
 
 @keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(323deg);
-            filter: hue-rotate(323deg);
+    -webkit-filter: hue-rotate(258deg);
+            filter: hue-rotate(258deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -270,6 +295,79 @@ body {
 .intro {
   height: 1015px;
   width: 100%;
+}
+
+.intro-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.intro-title {
+  color: black;
+  font-size: 50px;
+  margin-top: 50px;
+  z-index: 2;
+  position: absolute;
+  font-family: "museo-sans-display", sans-serif;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  opacity: 0;
+}
+
+.project-area {
+  height: 400px;
+  width: 70%;
+  background: #6158ff;
+  z-index: 1;
+  margin-top: 170px;
+  -webkit-box-shadow: #6259ff45 0 0 100px;
+          box-shadow: #6259ff45 0 0 100px;
+  -webkit-transform: translateY(80px);
+          transform: translateY(80px);
+  opacity: 0;
+  padding: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.project-area span {
+  font-size: 2.3em;
+  font-family: "Barlow", sans-serif;
+  color: white;
+}
+
+.project-area p {
+  font-family: "Barlow", sans-serif;
+  color: white;
+  font-size: 1.3em;
+}
+
+.project-area .project-image {
+  width: 100%;
+  overflow: hidden;
+  height: 415px;
+  margin-top: 50px;
+  -webkit-box-shadow: #6158ff6e 0 22px 100px;
+          box-shadow: #6158ff6e 0 22px 100px;
+}
+
+.project-area .project-image img {
+  width: 100%;
+}
+
+.project-area .project-tech {
+  float: right;
+  opacity: .4;
+}
+
+.pa-bolt {
+  background: #9465c3;
+  -webkit-box-shadow: #9465c357 0 0 100px;
+          box-shadow: #9465c357 0 0 100px;
 }
 
 .inner-circle-clone {
@@ -407,5 +505,40 @@ body {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
+}
+
+.dev-notice {
+  color: black;
+  font-size: 1.7em;
+  font-family: "Barlow", sans-serif;
+  z-index: 1;
+  position: relative;
+  top: 230px;
+  text-align: center;
+  width: 860px;
+  margin: 0 auto;
+}
+
+.dev-notice i {
+  color: black;
+  cursor: pointer;
+  opacity: .5;
+}
+
+.dev-notice i:hover {
+  opacity: 1;
+}
+
+.dev-notice span:nth-child(3) {
+  margin-top: 20px;
+  display: block;
+}
+
+.dev-notice span:nth-child(3) a {
+  opacity: .5;
+}
+
+.dev-notice span:nth-child(3) a:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=index.css.map */

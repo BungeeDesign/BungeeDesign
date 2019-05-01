@@ -4,36 +4,13 @@
 
 // Module Imports (Bundler Webpack - Transpiler Babel)
 // import  charming  from "charming"; // Try require
-import { TweenMax, Power2, TimelineLite, TweenLite } from 'gsap/TweenMax';
+import { TweenMax, Power2, TimelineLite, TweenLite, Power0 } from 'gsap/TweenMax';
 import jump from '../node_modules/jump.js/dist/jump.module.js';
-import smoothScroll from 'smooth-scroll';
+import smoothScroll from '../node_modules/smooth-scroll';
+import ScrollReveal from 'scrollreveal';
+
 
 // import anime from '../node_modules/animejs/lib/anime.es.js';
-
-// Preloader
-const getRandomColour = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-};
-
-const loaderCirc = document.querySelectorAll('.loaderCircle');
-
-anime({
-  targets: loaderCirc,
-  duration: 4500,
-  delay(el, index) {
-    return index * 500;
-  },
-  easing: 'easeOutExpo',
-  opacity: 1,
-  scale: '1.8',
-  color: getRandomColour(),
-  autoplay: true,
-});
 
 // Wait for DOM to load then run Init
 window.addEventListener('load', e => {
@@ -41,6 +18,7 @@ window.addEventListener('load', e => {
 });
 
 // Globally scoped
+const body = document.querySelector('body');
 const preloader = document.querySelector('.preloader');
 const mainSection = document.querySelector('.main');
 const introSection = document.querySelector('.intro');
@@ -77,7 +55,33 @@ function init() {
   setTimeout(() => {
     preloaderLoaded();
   }, 1200);
+  scrollReveals();
 }
+
+// Preloader
+const getRandomColour = () => {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+const loaderCirc = document.querySelectorAll('.loaderCircle');
+
+anime({
+  targets: loaderCirc,
+  duration: 4500,
+  delay(el, index) {
+    return index * 500;
+  },
+  easing: 'easeOutExpo',
+  opacity: 1,
+  scale: '1.8',
+  color: getRandomColour(),
+  autoplay: true,
+});
 
 function preloaderLoaded() {
   preloader.classList.add('preloader-loaded');
@@ -167,6 +171,24 @@ const cursorPromptAnimation = () => {
     // Show the cursor again
     document.querySelector('body').style.cursor = 'default';
   }, 600);
+
+  // Enable Scrolling
+  body.style.overflowY = 'auto';
+
+  // Hide the Custom Interface Cursor
+  innerCircle.style.zIndex = 0;
+  interfaceCursor.style.zIndex = 0;
+
+  TweenMax.to(['.intro-title', '.project-area', '.dev-notice'], .9, {
+    ease: Power1.easeInOut,
+    y: 0,
+    opacity: 1
+  }).delay(.8);
+
+  // Remove border radius on circle transiton
+  setTimeout(() => {
+    circleClone.style.borderRadius = 0;
+  }, 800);
 };
 
 const handleInterfaceCursor = e => {
@@ -192,3 +214,8 @@ const handleInterfaceCursor = e => {
     ease: Power2.ease,
   });
 };
+
+function scrollReveals() {
+  // ScrollReveal().reveal('.intro');
+
+}

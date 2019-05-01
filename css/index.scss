@@ -2,12 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');
 @import url('https://fonts.googleapis.com/css?family=Heebo:200,300,400,900');
 @import url("https://use.typekit.net/ppt8fxq.css");
+@import url('https://fonts.googleapis.com/css?family=Barlow');
 
 
 // SCSS Variables
 $rubik-one: 'Rubik Mono One', sans-serif;
 $heebo: 'Heebo', sans-serif;
 $museo-light: 'museo-sans-display', sans-serif;
+$barlow: 'Barlow', sans-serif;
+
+// Colour
+$bungee-blue: #0085FF;
 
 // SCSS Functions
 
@@ -15,18 +20,48 @@ $museo-light: 'museo-sans-display', sans-serif;
 @function randomNum($min, $max) {
     $rand: random();
     $randomNum: $min + floor($rand * (($max - $min) + 1));
-    
+
     @return $randomNum;
 }
+
+// SCSS Mixins
+@mixin scrollbars($size, $foreground-color, $background-color) {
+
+    // For Google Chrome
+    ::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}
+
+@include scrollbars(.5em, rgb(51, 51, 51), black);
 
 body {
     background: black;
     margin: 0px;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    // overflow: hidden;
-    // Hide cursor for main section
+    overflow-y: hidden;
     cursor: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }
 
 .preloader {
@@ -68,7 +103,7 @@ body {
     color: white;
     width: 300px;
     height: 300px;
-    margin-top: 460px; 
+    margin-top: 460px;
 }
 
 .preloader-loaded {
@@ -183,12 +218,13 @@ body {
     font-size: 60px;
     text-transform: uppercase;
     text-align: center;
-    margin-right: 10px; 
+    margin-right: 10px;
     font-family: $museo-light;
     z-index: 99;
-    & > span {
+
+    &>span {
         flex: none;
-        white-space: pre;    
+        white-space: pre;
         display: block;
         position: relative;
         // transition: ease .5s;
@@ -210,9 +246,10 @@ body {
     font-size: 25px;
     z-index: 99;
     margin-top: 150px;
-    & > span {
+
+    &>span {
         flex: none;
-        white-space: pre;    
+        white-space: pre;
         display: block;
         position: relative;
         // transition: ease .5s;
@@ -222,7 +259,7 @@ body {
     }
 }
 
-.main-title > span {
+.main-title>span {
     // display: block;
     transition: ease .6s;
 }
@@ -235,23 +272,94 @@ body {
     height: 100vh;
     transition: border .5s cubic-bezier(0.84, -0.1, 0.13, 1.12);
     animation: colorCycle infinite linear 8s alternate-reverse;
+
     @keyframes colorCycle {
         0% {
             filter: hue-rotate(#{randomNum(250, 360)}deg);
         }
 
         100% {
-            filter: hue-rotate(#{randomNum(0, 0)}deg); 
+            filter: hue-rotate(#{randomNum(0, 0)}deg);
         }
     }
 }
 
-// Temp devScroll section
+
 .intro {
     // height: 600px;
     height: 1015px;
     width: 100%;
 }
+
+.intro-content {
+    // position: absolute;
+    // flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-title {
+    color: black;
+    font-size: 50px;
+    margin-top: 50px;
+    z-index: 2;
+    position: absolute;
+    font-family: "museo-sans-display", sans-serif;
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+// Project Area
+.project-area {
+    // box-sizing: border-box;
+    height: 400px;
+    // width: 45%;
+    width: 70%;
+    background: #6158ff;
+    z-index: 1;
+    margin-top: 170px;
+    box-shadow: #6259ff45 0 0 100px;
+    transform: translateY(80px);
+    opacity: 0;
+    padding: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    span {
+        font-size: 2.3em;
+        font-family: $barlow;
+        color: white;
+    }
+
+    p {
+        font-family: $barlow;
+        color: white;
+        font-size: 1.3em;
+    }
+
+    .project-image {
+        width: 100%;
+        overflow: hidden;
+        height: 415px;
+        margin-top: 50px;
+        box-shadow: #6158ff6e 0 22px 100px;
+        img {
+            width: 100%;
+        }
+    }
+
+    .project-tech {
+        float: right;
+        opacity: .4;
+    }
+}
+
+// Project Specifc Classes
+.pa-bolt {
+    background: #9465c3;
+    box-shadow: #9465c357 0 0 100px;
+}
+
+
 
 // Inner circle clone for transiton to intro section
 .inner-circle-clone {
@@ -272,7 +380,6 @@ body {
 
 
 // Web GL Depth Element
-
 #gl {
     width: 100vw;
     height: 100vh;
@@ -308,22 +415,21 @@ body {
 }
 
 // Media Queries 
-
-@media (max-width: 1400px) { 
+@media (max-width: 1400px) {
     .main-title {
         margin-left: 350px;
         left: 0px;
     }
 }
 
-@media (max-width: 1375px) { 
+@media (max-width: 1375px) {
     .main-title {
         margin-left: 300px;
         transform: scale(.8);
     }
 }
 
-@media (max-width: 1200px) { 
+@media (max-width: 1200px) {
     .main-title {
         margin-left: 200px;
         transform: scale(.8);
@@ -332,51 +438,82 @@ body {
 
 // Center Layout for small widthed based devices
 
-@media (max-width: 1000px) { 
+@media (max-width: 1000px) {
     .main-title {
         margin-left: 100px;
         transform: scale(.8);
     }
 }
 
-@media (max-width: 730px) { 
+@media (max-width: 730px) {
     .main-title {
         margin-left: 60px;
         transform: scale(.7);
     }
 }
 
-@media (max-width: 600px) { 
+@media (max-width: 600px) {
     .main-title {
         margin-left: 10px;
         transform: scale(.7);
     }
 }
 
-@media (max-width: 500px) { 
+@media (max-width: 500px) {
     .main-title {
         margin-left: 0px;
         transform: scale(.6);
     }
 }
 
-@media (max-width: 450px) { 
+@media (max-width: 450px) {
     .main-title {
         margin-left: -30px;
         transform: scale(.6);
     }
 }
 
-@media (max-width: 420px) { 
+@media (max-width: 420px) {
     .main-title {
         margin-left: -40px;
         transform: scale(.6);
     }
 }
 
-@media (max-width: 420px) { 
+@media (max-width: 420px) {
     .main-title {
         margin-left: -50px;
         transform: scale(.6);
+    }
+}
+
+// Temp - Dev Notice
+.dev-notice {
+    color: black;
+    font-size: 1.7em;
+    font-family: "Barlow", sans-serif;
+    z-index: 1;
+    position: relative;
+    top: 230px;
+    text-align: center;
+    width: 860px;
+    margin: 0 auto;
+    i {
+        color: black;
+        cursor: pointer;
+        opacity: .5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    span:nth-child(3) {
+        margin-top: 20px;
+        display: block;
+        a {
+            opacity: .5;
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 }
