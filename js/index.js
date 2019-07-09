@@ -8,9 +8,12 @@ import { TweenMax, Power2, TimelineLite, TweenLite, Power0 } from 'gsap/TweenMax
 import jump from '../node_modules/jump.js/dist/jump.module.js';
 import smoothScroll from '../node_modules/smooth-scroll';
 import ScrollReveal from 'scrollreveal';
-
-
 // import anime from '../node_modules/animejs/lib/anime.es.js';
+
+// Force Page Scroll Reset On Refresh
+window.onbeforeunload = () => {
+  window.scrollTo(0, 0);
+};
 
 // Wait for DOM to load then run Init
 window.addEventListener('load', e => {
@@ -179,11 +182,21 @@ const cursorPromptAnimation = () => {
   innerCircle.style.zIndex = 0;
   interfaceCursor.style.zIndex = 0;
 
-  TweenMax.to(['.intro-title', '.project-area', '.dev-notice'], .9, {
-    ease: Power1.easeInOut,
-    y: 0,
-    opacity: 1
-  }).delay(.8);
+  const introIn = anime({
+    targets: '.project-elem',
+    duration: 1800,
+    delay(el, index) {
+      return index * 200;
+    },
+    easing: 'easeOutExpo',
+    opacity: 1,
+    translateY: '20',
+    autoplay: false
+  });
+
+  setTimeout(() => {
+    introIn.play();
+  }, 800);
 
   // Remove border radius on circle transiton
   setTimeout(() => {

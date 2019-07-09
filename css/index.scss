@@ -489,6 +489,8 @@ a {
 
 // Temp - Dev Notice
 .dev-notice {
+    opacity: 0;
+    transform: translateY(80px);
     color: black;
     font-size: 1.7em;
     font-family: "Barlow", sans-serif;
