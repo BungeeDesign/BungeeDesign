@@ -290,14 +290,15 @@ a {
 
 
 .intro {
-    // height: 600px;
     height: 1015px;
     width: 100%;
+    @media (max-width: 1200px) {
+        background: white;
+        height: 1700px;
+    }
 }
 
 .intro-content {
-    // position: absolute;
-    // flex-wrap: wrap;
     display: flex;
     justify-content: center;
 }
@@ -317,8 +318,8 @@ a {
 .project-area {
     // box-sizing: border-box;
     height: 400px;
-    // width: 45%;
-    width: 70%;
+    width: 100%;
+    max-width: 750px;
     background: #6158ff;
     z-index: 1;
     margin-top: 170px;
@@ -343,7 +344,7 @@ a {
     .project-image {
         width: 100%;
         overflow: hidden;
-        height: 415px;
+        height: auto;
         margin-top: 50px;
         box-shadow: #6158ff6e 0 22px 100px;
         img {
@@ -364,7 +365,13 @@ a {
 }
 
 // Project Grid
-
+.project-grid {
+    display: flex;
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
 
 
 
@@ -474,7 +481,8 @@ a {
     position: relative;
     top: 230px;
     text-align: center;
-    width: 860px;
+    width: 100%;
+    max-width: 830px;
     margin: 0 auto;
     i {
         color: black;

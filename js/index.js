@@ -45,12 +45,22 @@ let isCursorStuck = false;
 // Global Listeners
 document.addEventListener('mousemove', e => {
   if (!isCursorStuck) {
-    handleInterfaceCursor(e);
+    if (window.innerWidth > 1200) {
+      handleInterfaceCursor(e);
+    } else {
+      // Mobile / Touch Screen Devices
+      document.querySelector('body').style.cursor = 'default';
+      body.style.overflowY = 'auto';
+    }
   }
 });
 
 promptTitle.addEventListener('mouseover', e => {
-  cursorPromptAnimation();
+    if (window.innerWidth > 1200) {
+      cursorPromptAnimation();
+    } else {
+      touchDevicePromot();
+    }
 });
 
 // DOM has loaded
@@ -159,7 +169,7 @@ const cursorPromptAnimation = () => {
   scroll.animateScroll(1500);
 
   // Set Intro Section to Overflow hidden once cursor has eneterd intro section
-  introSection.style.overflow = 'hidden';
+  window.innerWidth > 1200 ? introSection.style.overflow = 'hidden' : introSection.style.overflow = 'visible';
 
   // Inner Circle Intro Section Transition
   TweenMax.to(innerCircle, 0.9, {
@@ -227,6 +237,31 @@ const handleInterfaceCursor = e => {
     ease: Power2.ease,
   });
 };
+
+function touchDevicePromot() {
+  let scroll = new smoothScroll({
+    speed: 1000,
+    speedAsDuration: true,
+    easing: 'easeInOut'
+  });
+  scroll.animateScroll(950);
+
+  const introIn = anime({
+    targets: '.project-elem',
+    duration: 1800,
+    delay(el, index) {
+      return index * 200;
+    },
+    easing: 'easeOutExpo',
+    opacity: 1,
+    translateY: '20',
+    autoplay: false
+  });
+
+  setTimeout(() => {
+    introIn.play();
+  }, 800);
+}
 
 function scrollReveals() {
   // ScrollReveal().reveal('.intro');

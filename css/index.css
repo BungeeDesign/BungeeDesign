@@ -278,8 +278,8 @@ a {
 
 @-webkit-keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(268deg);
-            filter: hue-rotate(268deg);
+    -webkit-filter: hue-rotate(321deg);
+            filter: hue-rotate(321deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -289,8 +289,8 @@ a {
 
 @keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(268deg);
-            filter: hue-rotate(268deg);
+    -webkit-filter: hue-rotate(321deg);
+            filter: hue-rotate(321deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -301,6 +301,13 @@ a {
 .intro {
   height: 1015px;
   width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .intro {
+    background: white;
+    height: 1700px;
+  }
 }
 
 .intro-content {
@@ -326,7 +333,8 @@ a {
 
 .project-area {
   height: 400px;
-  width: 70%;
+  width: 100%;
+  max-width: 750px;
   background: #6158ff;
   z-index: 1;
   margin-top: 170px;
@@ -355,7 +363,7 @@ a {
 .project-area .project-image {
   width: 100%;
   overflow: hidden;
-  height: 415px;
+  height: auto;
   margin-top: 50px;
   -webkit-box-shadow: #6158ff6e 0 22px 100px;
           box-shadow: #6158ff6e 0 22px 100px;
@@ -374,6 +382,22 @@ a {
   background: #9465c3;
   -webkit-box-shadow: #9465c357 0 0 100px;
           box-shadow: #9465c357 0 0 100px;
+}
+
+.project-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 1200px) {
+  .project-grid {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .inner-circle-clone {
@@ -492,7 +516,8 @@ a {
   position: relative;
   top: 230px;
   text-align: center;
-  width: 860px;
+  width: 100%;
+  max-width: 830px;
   margin: 0 auto;
 }
 
