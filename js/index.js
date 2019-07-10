@@ -23,6 +23,7 @@ window.addEventListener('load', e => {
 // Globally scoped
 const body = document.querySelector('body');
 const preloader = document.querySelector('.preloader');
+const prePreloader = document.querySelector('.pre-preloader');
 const mainSection = document.querySelector('.main');
 const introSection = document.querySelector('.intro');
 const background = document.querySelector('.main-bg-image');
@@ -100,6 +101,7 @@ function preloaderLoaded() {
   preloader.classList.add('preloader-loaded');
   setTimeout(() => {
     preloader.style.display = 'none';
+    prePreloader.style.display = 'none';
   }, 1500);
   mainSection.classList.add('mainIn');
   isLoaded = true;
