@@ -7,16 +7,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css">
     <link rel="stylesheet" href="css/index.css">
-    <!-- <script src="js/lib/blotter.min.js"></script> -->
-    <!-- <script src="js/lib//blotterMaterials/liquidDistortMaterial.js"></script> -->
-    <!-- <script src="js/lib//blotterMaterials/slidingDoorMaterial.js"></script> -->
     <title>Bungee Design</title>
 </head>
 <body>
     <main>
-        <!-- <div class="box"></div> -->
-        <!-- <div class="innerCircle"></div>    
-        <div class="interfaceCursor"></div> -->
         <section class="preloader">
             <div class="loaderWrapper">
                 <div class="loaderCircle"></div>
@@ -26,7 +20,6 @@
                 <div class="loaderCircle"></div>
             </div>
             <img src="assets/images/bungee-loader.svg" alt="">
-            <!-- <span class="preloader-title">LOADING</span> -->
         </section>
         <section class="main">
             <div class="test"></div>
@@ -34,13 +27,10 @@
                     <div id="gl" data-imageOriginal="assets/images/beauty.png" data-imageDepth="assets/images/z-depth-pass-2.png" data-horizontalThreshold="35" data-verticalThreshold="15"></div>
                 </div>
             <div class="main-content">
-                <!-- <div class="main-title" data-effect='titleIn'>We</div>
-                <div></div>
-                <div class="main-title" data-effect='titleIn'>Are</div>
-                <div></div> -->
-                <div class="main-title" data-effect='titleIn'>Bungee</div>
-                <div class="main-title" data-effect='titleIn'>Design</div>
-
+                <div class="main-title-wrapper">
+                    <div class="main-title" data-effect='titleIn'>Bungee</div>
+                    <div class="main-title" data-effect='titleIn'>Design</div>
+                </div>
                 <div class="sub-title"><p data-effect='titleIn'>The creative development and design company.</p></div>
             </div>
             <div class="scrollPrompt">
@@ -51,30 +41,31 @@
         <section class="intro">
             <div class="intro-content">
                 <div class="intro-title project-elem">Our Projects</div>
-
-                <div class="project-area project-elem">
-                    <span>Workwear Village</span>
-                    <span class="project-tech">
-                        <i class="fab fa-digital-ocean"></i>
-                        <i class="fab fa-node"></i>
-                        <i class="fab fa-mailchimp"></i>
-                    </span>
-                    <p>A custom order management system for Shopify. Built with Node.js and Express.js</p>
-                    <div class="project-image">
-                        <img src="assets/images/projects/macwear/mos.png" alt="Workwear Village Order System">
+                <div class="project-grid">
+                    <div class="project-area project-elem">
+                        <span>Workwear Village</span>
+                        <span class="project-tech">
+                            <i class="fab fa-digital-ocean"></i>
+                            <i class="fab fa-node"></i>
+                            <i class="fab fa-mailchimp"></i>
+                        </span>
+                        <p>A custom order management system for Shopify. Built with Node.js and Express.js</p>
+                        <div class="project-image">
+                            <img src="assets/images/projects/macwear/mos.png" alt="Workwear Village Order System">
+                        </div>
                     </div>
-                </div>
-                <div class="project-area pa-bolt project-elem">
-                    <span>Bolt Raffles</span>
-                    <span class="project-tech">
-                        <i class="fab fa-digital-ocean"></i>
-                        <i class="fab fa-node"></i>
-                        <i class="fas fa-atom"></i>
-                        <i class="fab fa-vuejs"></i>
-                    </span>
-                    <p>Bolt Raffles is a raffle entry bot for popular sneaker and clothing raffles.</p>
-                    <div class="project-image">
-                        <img src="assets/images/projects/bolt/Bolt-Raffles-UI.png" alt="Bolt Raffles Desktop UI">
+                    <div class="project-area pa-bolt project-elem">
+                        <span>Bolt Raffles</span>
+                        <span class="project-tech">
+                            <i class="fab fa-digital-ocean"></i>
+                            <i class="fab fa-node"></i>
+                            <i class="fas fa-atom"></i>
+                            <i class="fab fa-vuejs"></i>
+                        </span>
+                        <p>Bolt Raffles is a raffle entry bot for popular sneaker and clothing raffles.</p>
+                        <div class="project-image">
+                            <img src="assets/images/projects/bolt/Bolt-Raffles-UI.png" alt="Bolt Raffles Desktop UI">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,7 +86,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <script src="js/helpers.js"></script>
 <script src='https://bundle.run/charming'></script>
-<!-- <script src="js/index.js"></script> -->
 <script src="dist/bundle.js"></script>
 <script type="module" src="js/depth.js"></script>
 </html>

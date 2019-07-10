@@ -212,6 +212,10 @@ a {
     float: right;
 }
 
+.main-title-wrapper {
+    display: flex;
+}
+
 .main-title {
     display: flex;
     color: white;
@@ -359,6 +363,9 @@ a {
     box-shadow: #9465c357 0 0 100px;
 }
 
+// Project Grid
+
+
 
 
 // Inner circle clone for transiton to intro section
@@ -397,7 +404,8 @@ a {
 
 .main svg {
     position: absolute;
-    width: 1%;
+    width: 100%;
+    max-width: 20px;
 }
 
 .scrollPrompt svg path {
@@ -415,74 +423,42 @@ a {
 }
 
 // Media Queries 
-@media (max-width: 1400px) {
-    .main-title {
-        margin-left: 350px;
-        left: 0px;
-    }
-}
-
-@media (max-width: 1375px) {
-    .main-title {
-        margin-left: 300px;
-        transform: scale(.8);
-    }
-}
-
-@media (max-width: 1200px) {
-    .main-title {
-        margin-left: 200px;
-        transform: scale(.8);
-    }
-}
-
-// Center Layout for small widthed based devices
-
-@media (max-width: 1000px) {
-    .main-title {
-        margin-left: 100px;
-        transform: scale(.8);
-    }
-}
-
 @media (max-width: 730px) {
-    .main-title {
-        margin-left: 60px;
+    .main-title-wrapper {
         transform: scale(.7);
     }
 }
 
 @media (max-width: 600px) {
-    .main-title {
-        margin-left: 10px;
+    .main-title-wrapper {
         transform: scale(.7);
+    }
+
+    .sub-title {
+        transform: scale(.8);
     }
 }
 
 @media (max-width: 500px) {
-    .main-title {
-        margin-left: 0px;
+    .main-title-wrapper {
         transform: scale(.6);
     }
 }
 
 @media (max-width: 450px) {
-    .main-title {
-        margin-left: -30px;
+    .main-title-wrapper {
         transform: scale(.6);
     }
 }
 
 @media (max-width: 420px) {
-    .main-title {
-        margin-left: -40px;
+    .main-title-wrapper {
         transform: scale(.6);
     }
 }
 
 @media (max-width: 420px) {
-    .main-title {
-        margin-left: -50px;
+    .main-title-wrapper {
         transform: scale(.6);
     }
 }

@@ -199,6 +199,12 @@ a {
   float: right;
 }
 
+.main-title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .main-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -272,8 +278,8 @@ a {
 
 @-webkit-keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(259deg);
-            filter: hue-rotate(259deg);
+    -webkit-filter: hue-rotate(268deg);
+            filter: hue-rotate(268deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -283,8 +289,8 @@ a {
 
 @keyframes colorCycle {
   0% {
-    -webkit-filter: hue-rotate(259deg);
-            filter: hue-rotate(259deg);
+    -webkit-filter: hue-rotate(268deg);
+            filter: hue-rotate(268deg);
   }
   100% {
     -webkit-filter: hue-rotate(0deg);
@@ -411,7 +417,8 @@ a {
 
 .main svg {
   position: absolute;
-  width: 1%;
+  width: 100%;
+  max-width: 20px;
 }
 
 .scrollPrompt svg path {
@@ -428,80 +435,47 @@ a {
   color: white;
 }
 
-@media (max-width: 1400px) {
-  .main-title {
-    margin-left: 350px;
-    left: 0px;
-  }
-}
-
-@media (max-width: 1375px) {
-  .main-title {
-    margin-left: 300px;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-}
-
-@media (max-width: 1200px) {
-  .main-title {
-    margin-left: 200px;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-}
-
-@media (max-width: 1000px) {
-  .main-title {
-    margin-left: 100px;
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-  }
-}
-
 @media (max-width: 730px) {
-  .main-title {
-    margin-left: 60px;
+  .main-title-wrapper {
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
   }
 }
 
 @media (max-width: 600px) {
-  .main-title {
-    margin-left: 10px;
+  .main-title-wrapper {
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
+  }
+  .sub-title {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
 }
 
 @media (max-width: 500px) {
-  .main-title {
-    margin-left: 0px;
+  .main-title-wrapper {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
 }
 
 @media (max-width: 450px) {
-  .main-title {
-    margin-left: -30px;
+  .main-title-wrapper {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
 }
 
 @media (max-width: 420px) {
-  .main-title {
-    margin-left: -40px;
+  .main-title-wrapper {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
 }
 
 @media (max-width: 420px) {
-  .main-title {
-    margin-left: -50px;
+  .main-title-wrapper {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
   }
