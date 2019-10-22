@@ -3,7 +3,6 @@
 // Copyright Bungee Design Limited 2019
 
 // Module Imports (Bundler Webpack - Transpiler Babel)
-// import  charming  from "charming"; // Try require
 import { TweenMax, Power2, TimelineLite, TweenLite, Power0 } from 'gsap/TweenMax';
 import jump from '../node_modules/jump.js/dist/jump.module.js';
 import smoothScroll from '../node_modules/smooth-scroll';
