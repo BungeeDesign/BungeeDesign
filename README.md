@@ -18,7 +18,7 @@ I have experience working across the entire stack, from front-end interfaces to 
 | :--- | :--- |
 | **Front-end** | `TypeScript`, `JavaScript`, `React`, `React Native`, `Next.js`, `Three.js` |
 | **Back-end** | `Node.js`, `Express`, `Go (Fiber)`, `tRPC`, `GraphQL`, `Rust (Anchor)` |
-| **General** | `Java`, `SQL` |
+| **General** | `Python`, `Java`, `SQL` |
 
 ### **Cloud, DevOps & Tooling**
 
