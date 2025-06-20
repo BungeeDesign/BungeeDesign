@@ -9,7 +9,6 @@ Just copy and paste the Markdown code below into the `README.md` file in your `B
 # Hi there, I'm James! 👋
 
 <a href="https://j3s.me" target="_blank"><img src="https://img.shields.io/badge/Portfolio-j3s.me-blue?style=for-the-badge&logo=icloud" alt="Portfolio"></a>
-<a href="https://www.linkedin.com/in/your-linkedin-profile/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn"></a>
 
 I'm a software developer based in the UK with a First Class BSc in Computer Science. My journey into tech began with self-taught exploration, which evolved into a deep passion for building robust, scalable, and innovative solutions. I thrive on architecting complex systems and have a strong interest in everything from full-stack web and mobile development to cloud infrastructure and Web3.
 
