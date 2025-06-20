@@ -2,7 +2,7 @@
 
 # Hi I'm James! 👋
 
-I'm a software developer based in the UK with a First Class BSc in Computer Science. My journey into tech began with self-taught exploration, which evolved into a deep passion for building robust, scalable, and innovative solutions. I thrive on architecting complex systems and have a strong interest in everything from full-stack web and mobile development to cloud infrastructure and Web3.
+I'm a software engineer based in the UK with a First Class BSc in Computer Science. My journey into tech began with self-taught exploration, which evolved into a deep passion for building robust, scalable, and innovative solutions. I thrive on architecting complex systems and have a strong interest in everything from full-stack web and mobile development to cloud infrastructure and Web3.
 
 I'm always eager to take on new challenges and contribute to impactful projects.
 
