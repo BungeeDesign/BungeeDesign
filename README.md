@@ -8,7 +8,7 @@ I'm always eager to take on new challenges and contribute to impactful projects.
 
 -----
 
-## 🛠️ My Tech Stack
+## Tech Stack
 
 I have experience working across the entire stack, from front-end interfaces to backend services and cloud deployment.
 
@@ -32,16 +32,16 @@ I have experience working across the entire stack, from front-end interfaces to 
 
 -----
 
-## 🚀 Featured Projects
+## Featured Projects
 
 Here are a few projects that highlight my skills and interests:
 
 | Project | Description | Key Technologies |
 | :--- | :--- | :--- |
-| 🚨 **echo** | A disaster communication platform to keep communities connected with emergency services when conventional infrastructure fails. | `React Native`, `AWS Lambda`, `Serverless` |
+| 🚨 **Echo** | A disaster communication platform to keep communities connected with emergency services when conventional infrastructure fails. |`React`, `React Native/Expo`, `Express.js` |
 | 🛡️ **Domain-Grabber** | A penetration testing tool for subdomain discovery and reconnaissance, automating screenshots and domain probing. | `JavaScript`, `Node.js` |
-| 🏰 **VA-Museum-Client** | A Single Page Application for exploring the Victoria & Albert Museum's Object API, built to handle a vast collection of data. | `React`, `TypeScript`, `GraphQL` |
-| 🤖 **smart-intercom** | Transforms a standard analogue intercom into a smart device using audio fingerprinting to send real-time notifications. | `Python`, `Raspberry Pi` |
+| 🏰 **VA-Museum-Client** | A Single Page Application for exploring the Victoria & Albert Museum's Object API, built to handle a vast collection of data. | `Vanilla JavaScript` |
+| 🤖 **Picom** | Transforms a standard analogue intercom into a smart device using audio fingerprinting to send real-time notifications. | `Python`, `Raspberry Pi` |
 
 -----
 
