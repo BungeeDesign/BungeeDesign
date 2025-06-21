@@ -6,7 +6,7 @@ Software engineer from the UK passionate about building at the intersection of e
 
 I've been deep in the AI space since before it was cool — following researchers like Demis Hassabis, David Silver, and Geoffrey Hinton when they were still considered niche. Now I work with cutting-edge frontier models, from generative AI to agentic workflows, always exploring what's next.
 
-My journey started with Little Man Computer (LMC) and evolved through the entire stack. These days, I'm particularly obsessed with the TypeScript ecosystem and how it's revolutionising full-stack development. I've also ventured into Web3, building on Solana with Rust/Anchor.
+My journey started with Little Man Computer (LMC) and evolved through the entire stack. These days, I'm particularly obsessed with the TypeScript ecosystem and how it's revolutionising full-stack development. I've also ventured into Web3, building on Solana with Rust/Anchor. I also love reverse-engineering; especially bot-detection systems which resulted in a great understanding of how bots work and opperate and the fingerprinting methods to detect them.
 
 ## Tech I Work With
 
@@ -49,10 +49,7 @@ I believe in:
 
 ## Let's Connect
 
-Always down to chat about AI, ambitious projects, or that wild WebGL animation idea you have.
-
-📧 [Email](mailto:your-email@example.com)  
+📧 [Email](mailto:james@j3s.me)  
 🌐 [j3s.me](https://j3s.me)  
-💼 [LinkedIn](https://linkedin.com/in/your-profile)
 
 ---
