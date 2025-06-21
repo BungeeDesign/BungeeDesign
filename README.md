@@ -1,52 +1,58 @@
------
+# Hey, I'm James 👋
 
-# Hi I'm James! 👋
+Software engineer from the UK passionate about building at the intersection of engineering excellence and emerging tech.
 
-I'm a software engineer based in the UK with a First Class BSc in Computer Science. My journey into tech began with self-taught exploration, which evolved into a deep passion for building robust, scalable, and innovative solutions. I thrive on architecting complex systems and have a strong interest in everything from full-stack web and mobile development to cloud infrastructure and Web3.
+## What I'm About
 
-I'm always eager to take on new challenges and contribute to impactful projects.
+I've been deep in the AI space since before it was cool — following researchers like Demis Hassabis, David Silver, and Geoffrey Hinton when they were still considered niche. Now I work with cutting-edge frontier models, from generative AI to agentic workflows, always exploring what's next.
 
------
+My journey started with Little Man Computer (LMC) and evolved through the entire stack. These days, I'm particularly obsessed with the TypeScript ecosystem and how it's revolutionising full-stack development. I've also ventured into Web3, building on Solana with Rust/Anchor.
 
-## Tech Stack
+## Tech I Work With
 
-I have experience working across the entire stack, from front-end interfaces to backend services and cloud deployment.
+**Daily drivers:** TypeScript, React/Next.js, Node.js, React Native/Expo  
+**Mobile:** Swift/SwiftUI, React Native  
+**Languages:** JavaScript, Python, Java, Rust, Go  
+**Cloud & Infra:** AWS (Lambda, Step Functions, EKS), Docker, Kubernetes  
+**AI/ML:** Working with SOTA models, RAG systems, agent frameworks  
+**Web3:** Solana, Anchor framework  
 
-### **Languages & Frameworks**
+## Current Interests
 
-| Category | Technologies |
-| :--- | :--- |
-| **Front-end** | `TypeScript`, `JavaScript`, `React`, `React Native`, `Next.js`, `Three.js` |
-| **Back-end** | `Node.js`, `Express`, `Go (Fiber)`, `tRPC`, `GraphQL`, `Rust (Anchor)` |
-| **General** | `Python`, `Java`, `SQL` |
+- **AI Engineering:** Building with frontier models, exploring agentic systems, and following the latest from OpenAI, Anthropic, and the broader AI research community
+- **Full-Stack TypeScript:** Pushing the boundaries with Next.js, Three.js for WebGL, and type-safe architectures
+- **System Design:** Scaling from zero to millions, distributed systems, and performance optimisation
+- **Creative Coding:** Three.js, shaders, generative art, and pushing what's possible in the browser
 
-### **Cloud, DevOps & Tooling**
+## What I'm Learning
 
-| Category | Technologies |
-| :--- | :--- |
-| **Cloud** | `AWS (Lambda, Step Functions, EKS, S3)` |
-| **Databases** | `PostgreSQL`, `MongoDB` |
-| **DevOps & Infra** | `Docker`, `Kubernetes`, `CI/CD (GitHub Actions)`, `Terraform` |
-| **Observability** | `Grafana`, `Datadog`, `Axiom` |
-| **Tools & Practices** | `TDD`, `Serverless`, `PlayCanvas`, `Jira`, `Linear`, `Git` |
-
------
+Always expanding — currently diving deeper into:
+- Advanced Three.js and GLSL shaders
+- Robotics and embodied AI
+- Effect-TS for better error handling patterns
+- System design at scale
 
 ## Featured Projects
 
-Here are a few projects that highlight my skills and interests:
+| Project | Description | Stack |
+|---------|-------------|-------|
+| **Echo** 🚨 | Disaster communication platform for when infrastructure fails | React Native, Express.js, Offline-first architecture |
+| **Domain-Grabber** 🛡️ | Pentesting tool for subdomain discovery and reconnaissance | Node.js, Automation |
+| **Picom** 🤖 | Smart intercom using audio fingerprinting | Python, Raspberry Pi, Real-time processing |
 
-| Project | Description | Key Technologies |
-| :--- | :--- | :--- |
-| 🚨 **Echo** | A disaster communication platform to keep communities connected with emergency services when conventional infrastructure fails. |`React`, `React Native/Expo`, `Express.js` |
-| 🛡️ **Domain-Grabber** | A penetration testing tool for subdomain discovery and reconnaissance, automating screenshots and domain probing. | `JavaScript`, `Node.js` |
-| 🏰 **VA-Museum-Client** | A Single Page Application for exploring the Victoria & Albert Museum's Object API, built to handle a vast collection of data. | `Vanilla JavaScript` |
-| 🤖 **Picom** | Transforms a standard analogue intercom into a smart device using audio fingerprinting to send real-time notifications. | `Python`, `Raspberry Pi` |
+## Philosophy
 
------
+I believe in:
+- Building software that's not just functional, but delightful
+- Staying on the bleeding edge while shipping production-ready code
+- Learning in public and sharing knowledge with the community
 
-## 📫 Get In Touch
+## Let's Connect
 
-I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team.
+Always down to chat about AI, ambitious projects, or that wild WebGL animation idea you have.
 
-  * **Portfolio:** [**j3s.me**](https://j3s.me)
+📧 [Email](mailto:your-email@example.com)  
+🌐 [j3s.me](https://j3s.me)  
+💼 [LinkedIn](https://linkedin.com/in/your-profile)
+
+---
