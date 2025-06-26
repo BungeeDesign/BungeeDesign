@@ -4,7 +4,7 @@ Software engineer from the UK passionate about building at the intersection of e
 
 ## What I'm About
 
-I've been deep in the AI space since before it was cool — following researchers like Demis Hassabis, David Silver, and Geoffrey Hinton when they were still considered niche. Now I work with cutting-edge frontier models, from generative AI to agentic workflows, always exploring what's next.
+I've been deep in the AI space since before it was cool following researchers like Demis Hassabis, David Silver, and Geoffrey Hinton when they were still considered niche. Now I work with cutting-edge frontier models, from generative AI to agentic workflows, always exploring what's next.
 
 My journey started with Little Man Computer (LMC) and evolved through the entire stack. These days, I'm particularly obsessed with the TypeScript ecosystem. I've also ventured into Web3, building on Solana with Rust/Anchor. I also love reverse-engineering; especially bot-detection systems which resulted in a great understanding of how bots work and opperate and the fingerprinting methods to detect them.
 
