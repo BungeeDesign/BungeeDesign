@@ -1,8 +1,6 @@
-# Hey, I'm James 👋
+# Hey, I'm James
 
 Software engineer from the UK passionate about building at the intersection of engineering excellence and emerging tech.
-
-## What I'm About
 
 I've been deep in the AI space since before it was cool following researchers like Demis Hassabis, David Silver, and Geoffrey Hinton when they were still considered niche. Now I work with cutting-edge frontier models, from generative AI to agentic workflows, always exploring what's next.
 
@@ -30,24 +28,7 @@ Always expanding — currently diving deeper into:
 - Advanced Three.js and GLSL shaders
 - Robotics and embodied AI
 - Effect-TS for better error handling patterns
-- System design at scale
 
-## Featured Projects
-
-| Project | Description | Stack |
-|---------|-------------|-------|
-| **Echo** 🚨 | Disaster communication platform for when infrastructure fails | React Native, Express.js, Offline-first architecture |
-| **Domain-Grabber** 🛡️ | Pentesting tool for subdomain discovery and reconnaissance | Node.js, Automation |
-| **Picom** 🤖 | Smart intercom using audio fingerprinting | Python, Raspberry Pi, Real-time processing |
-
-## Philosophy
-
-I believe in:
-- Building software that's not just functional, but delightful
-- Staying on the bleeding edge while shipping production-ready code
-- Learning in public and sharing knowledge with the community
-
-## Let's Connect
 
 📧 [Email](mailto:james@j3s.me)  
 🌐 [j3s.me](https://j3s.me)  
