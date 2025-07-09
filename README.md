@@ -24,7 +24,7 @@ My journey started with Little Man Computer (LMC) and evolved through the entire
 
 ## What I'm Learning
 
-Always expanding — currently diving deeper into:
+Always expanding, currently diving deeper into:
 - Advanced Three.js and GLSL shaders
 - Robotics and embodied AI
 - Effect-TS for better error handling patterns
